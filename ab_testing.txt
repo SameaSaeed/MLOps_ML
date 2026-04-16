@@ -1,0 +1,12 @@
+upstream ab_test {
+    server 127.0.0.1:5001 weight=1;
+    server 127.0.0.1:5002 weight=1;
+}
+
+server {
+    listen 8080;
+
+    location /predict {
+        proxy_pass http://ab_test;
+    }
+}

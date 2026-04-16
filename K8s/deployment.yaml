@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: model-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: model-api
+  template:
+    metadata:
+      labels:
+        app: model-api
+    spec:
+      containers:
+        - name: model-api
+          image: model-api:latest
+          imagePullPolicy: Never   # Required for Minikube
+          ports:
+            - containerPort: 8000
+          env:
+            - name: MODEL_PATH
+              valueFrom:
+                configMapKeyRef:
+                  name: model-config
+                  key: MODEL_PATH
+            - name: PREPROCESSOR_PATH
+              valueFrom:
+                configMapKeyRef:
+                  name: model-config
+                  key: PREPROCESSOR_PATH
+            - name: LOG_LEVEL
+              valueFrom:
+                configMapKeyRef:
+                  name: model-config
+                  key: LOG_LEVEL

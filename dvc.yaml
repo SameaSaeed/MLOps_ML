@@ -1,0 +1,28 @@
+stages:
+  clean:
+    cmd: python src/data-preprocessing.py --input data/raw/data.csv --output data/processed/cleaned_data.csv
+    deps:
+      - src/data-preprocessing.py
+      - data/raw/data.csv
+    outs:
+      - data/processed/cleaned_data.csv
+
+  feature_engineering:
+    cmd: python src/feature-engineer.py --input data/processed/cleaned_data.csv --output data/processed/features.csv --preprocessor src/preprocessor.pkl
+    deps:
+      - src/feature-engineer.py
+      - data/processed/cleaned_data.csv
+      - src/preprocessor.pkl
+    outs:
+      - data/processed/features.csv
+
+  train:
+    cmd: python src/train.py --config src/model_config.yaml --data data/processed/features.csv --models-dir models --dvc
+    deps:
+      - src/train.py
+      - data/processed/features.csv
+      - src/model_config.yaml
+    outs:
+      - models/trained_model.pkl
+      - models/metrics.json
+      - models/mlruns

@@ -117,7 +117,7 @@ Test A/B traffic routing: curl -X POST http://localhost:8080/predict -H "Content
 
 ## Output
 
-<img width="1734" height="927" alt="image" src="https://github.com/user-attachments/assets/70043e57-9833-4b18-aa67-c1837c1fbed5" />
+<img width="1734" height="769" alt="579456188-70043e57-9833-4b18-aa67-c1837c1fbed5" src="https://github.com/user-attachments/assets/90c493a9-eeae-4f34-8d3a-3581acdc302d" />
 
 ## Contact
 

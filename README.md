@@ -36,7 +36,7 @@ You can install all core dependencies using the provided requirements file.
 
 Below is an overview of the pipeline structure and data flow:
 
-<img width="450" height="450" alt="579441890-2ecba885-612b-4069-9ee9-7412dae0433f" src="https://github.com/user-attachments/assets/fd419de7-31b8-4256-9bd0-62a348e08c90" />
+<img width="400" height="400" alt="579441890-2ecba885-612b-4069-9ee9-7412dae0433f" src="https://github.com/user-attachments/assets/afe3a191-a29f-4531-997f-fadc3f2f4909" />
 
 ## Installation
 Follow these steps to set up the project on your local machine:
@@ -117,7 +117,7 @@ Test A/B traffic routing: curl -X POST http://localhost:8080/predict -H "Content
 
 ## Output
 
-<img width="1734" height="780" alt="Batch_predict" src="https://github.com/user-attachments/assets/a1c7a06c-b5af-42e2-a278-fcffbd126545" />
+<img width="1734" height="927" alt="image" src="https://github.com/user-attachments/assets/70043e57-9833-4b18-aa67-c1837c1fbed5" />
 
 ## Contact
 
